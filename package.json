@@ -1,0 +1,17 @@
+{
+  "name": "dreamscape",
+  "private": true,
+  "packageManager": "pnpm@10.33.0",
+  "devDependencies": {
+    "@babel/preset-react": "^7.24.1",
+    "@pmmmwh/react-refresh-webpack-plugin": "^0.5.5",
+    "react-refresh": "^0.14.0"
+  },
+  "scripts": {
+    "dev:miniprogram": "pnpm --dir apps/miniprogram dev",
+    "build:miniprogram": "pnpm --dir apps/miniprogram build",
+    "dev:server": "pnpm --dir apps/server dev",
+    "build:server": "pnpm --dir apps/server build",
+    "lint:server": "pnpm --dir apps/server lint"
+  }
+}
