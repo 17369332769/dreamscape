@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>无限梦境 - AI驱动的角色扮演互动小说</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Long+Cang&family=Noto+Serif+SC:wght@300;400;600;700&family=ZCOOL+XiaoWei&display=swap" rel="stylesheet">
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Background Particles Layer -->
+    <div class="sky-particles" id="particles-container"></div>
+
+    <div class="phone-frame">
+        <div class="phone-container">
+            <!-- Top Status Bar & Ornaments -->
+            <div class="top-bar">
+                <!-- Hanging Ornament (Left) -->
+                <div class="hanging-ornament">
+                    <div class="tassel-hook"></div>
+                    <div class="tassel-string"></div>
+                    <div class="tassel-gem"></div>
+                    <div class="tassel-threads"></div>
+                </div>
+
+                <!-- Mini program controls (Right) -->
+                <div class="mini-controls">
+                    <div class="ellipsis-btn">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <div class="divider"></div>
+                    <div class="circle-btn">
+                        <div class="inner-circle"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Title & Logo Area -->
+            <header class="main-header">
+                <img src="../generated-assets/首页/title-logo.png" alt="无限梦境" class="title-logo">
+                <div class="title-sub-text">
+                    <span class="decor-diamond">✦</span>
+                    AI驱动的角色扮演互动小说
+                    <span class="decor-diamond">✦</span>
+                </div>
+            </header>
+
+            <!-- Crystal Counter -->
+            <div class="crystal-widget-container">
+                <div class="crystal-widget" id="crystal-widget">
+                    <img src="../generated-assets/首页/ui-ornament-crystal.png" alt="灵石" class="crystal-icon">
+                    <span class="crystal-amount" id="crystal-count">1,268</span>
+                    <button class="crystal-add-btn" id="add-crystals-btn">
+                        <i class="fa-solid fa-plus"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Scrollable Content Area -->
+            <div class="scroll-content">
+                
+                <!-- Character Status Card -->
+                <section class="character-card">
+                    <div class="character-card-glow"></div>
+                    <div class="avatar-container">
+                        <img src="../generated-assets/首页/character-portrait.png" alt="角色头像" class="character-avatar">
+                        <span class="character-level">60</span>
+                    </div>
+                    <div class="character-details">
+                        <div class="character-main-info">
+                            <div class="name-row">
+                                <h2 class="character-name">夜行舟</h2>
+                                <span class="realm-badge">练气巅峰</span>
+                            </div>
+                            <p class="character-sect">修仙世界 · 青云门外门弟子</p>
+                        </div>
+
+                        <!-- Attributes Row (5 Stats) -->
+                        <div class="attributes-row">
+                            <div class="stat-item" data-stat="wuli">
+                                <div class="stat-icon-wrapper wuli">
+                                    <img src="../generated-assets/首页/stat-icon-wuli.png" alt="武力">
+                                </div>
+                                <div class="stat-text">
+                                    <span class="stat-top">武力 <span class="val">72</span></span>
+                                    <span class="stat-bottom">72</span>
+                                </div>
+                            </div>
+                            <div class="stat-item" data-stat="zhimou">
+                                <div class="stat-icon-wrapper zhimou">
+                                    <img src="../generated-assets/首页/stat-icon-zhimou.png" alt="智谋">
+                                </div>
+                                <div class="stat-text">
+                                    <span class="stat-top">智谋 <span class="val">68</span></span>
+                                    <span class="stat-bottom">68</span>
+                                </div>
+                            </div>
+                            <div class="stat-item" data-stat="meili">
+                                <div class="stat-icon-wrapper meili">
+                                    <img src="../generated-assets/首页/stat-icon-meili.png" alt="魅力">
+                                </div>
+                                <div class="stat-text">
+                                    <span class="stat-top">魅力 <span class="val">75</span></span>
+                                    <span class="stat-bottom">75</span>
+                                </div>
+                            </div>
+                            <div class="stat-item" data-stat="qiyun">
+                                <div class="stat-icon-wrapper qiyun">
+                                    <img src="../generated-assets/首页/stat-icon-qiyun.png" alt="气运">
+                                </div>
+                                <div class="stat-text">
+                                    <span class="stat-top">气运 <span class="val">61</span></span>
+                                    <span class="stat-bottom">61</span>
+                                </div>
+                            </div>
+                            <div class="stat-item" data-stat="yizhi">
+                                <div class="stat-icon-wrapper yizhi">
+                                    <img src="../generated-assets/首页/stat-icon-yizhi.png" alt="意志">
+                                </div>
+                                <div class="stat-text">
+                                    <span class="stat-top">意志 <span class="val">70</span></span>
+                                    <span class="stat-bottom">70</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Chapter Status Card -->
+                <section class="chapter-card">
+                    <div class="chapter-left">
+                        <h3 class="chapter-title">第3章 · 暗流初现</h3>
+                        <p class="chapter-desc">调查镇守使失踪案的线索</p>
+                    </div>
+
+                    <div class="chapter-middle">
+                        <div class="progress-header">
+                            <span>进度 <span class="progress-percent" id="progress-text">65%</span></span>
+                        </div>
+                        <div class="progress-bar-container">
+                            <div class="progress-bar-fill" id="progress-bar-fill" style="width: 65%;"></div>
+                        </div>
+                    </div>
+                    
+                    <button class="chapter-reward-btn" id="reward-chest-btn">
+                        <img src="../generated-assets/首页/ui-ornament-chest.png" alt="章节奖励" class="chest-icon">
+                        <span class="reward-label">章节奖励</span>
+                    </button>
+                </section>
+
+                <!-- Center Interactive Portal Button -->
+                <div class="portal-container">
+                    <div class="portal-halo"></div>
+                    <button class="portal-btn" id="continue-dream-btn">
+                        <img src="../generated-assets/首页/ui-ornament-portal.png" alt="继续梦境" class="portal-bg-img">
+                        <div class="portal-text-wrapper">
+                            <span class="portal-main-text">继续梦境</span>
+                            <span class="portal-sub-text" id="round-text">第3章 · 第7轮</span>
+                        </div>
+                    </button>
+                </div>
+
+                <!-- Bottom Menu Navigation (4 columns) -->
+                <nav class="bottom-menu">
+                    <div class="menu-item" data-menu="profile">
+                        <div class="menu-card">
+                            <img src="../generated-assets/首页/menu-icon-profile.png" alt="创建角色" class="menu-icon">
+                            <h4 class="menu-title">创建角色</h4>
+                            <p class="menu-subtitle">开启新的梦境</p>
+                        </div>
+                    </div>
+                    <div class="menu-item" data-menu="pouch">
+                        <div class="menu-card">
+                            <img src="../generated-assets/首页/menu-icon-pouch.png" alt="背包" class="menu-icon">
+                            <h4 class="menu-title">背包</h4>
+                            <p class="menu-subtitle">查看道具装备</p>
+                        </div>
+                    </div>
+                    <div class="menu-item" data-menu="book">
+                        <div class="menu-card">
+                            <img src="../generated-assets/首页/menu-icon-book.png" alt="图鉴" class="menu-icon">
+                            <h4 class="menu-title">图鉴</h4>
+                            <p class="menu-subtitle">角色与故事集</p>
+                        </div>
+                    </div>
+                    <div class="menu-item" data-menu="pavilion">
+                        <div class="menu-card">
+                            <img src="../generated-assets/首页/menu-icon-pavilion.png" alt="社区广场" class="menu-icon">
+                            <h4 class="menu-title">社区广场</h4>
+                            <p class="menu-subtitle">分享与交流</p>
+                        </div>
+                    </div>
+                </nav>
+
+                <!-- Footer Quote -->
+                <footer class="main-footer">
+                    <div class="quote-container">
+                        <p class="quote-line">每一次选择，都是命运的涟漪。</p>
+                        <p class="quote-line">你的梦境，由你书写。</p>
+                    </div>
+                </footer>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modals for Bottom Menu & Stats Tooltips -->
+    <!-- Stat Detail Modal (Tooltip) -->
+    <div class="stat-tooltip" id="stat-tooltip">
+        <h5 class="tooltip-name" id="tooltip-stat-name">属性</h5>
+        <p class="tooltip-desc" id="tooltip-stat-desc">属性描述信息</p>
+        <div class="tooltip-arrow"></div>
+    </div>
+
+    <!-- Interactive Menu Modals -->
+    <div class="modal-overlay" id="modal-overlay"></div>
+
+    <!-- Modal 1: Profile (创建角色) -->
+    <div class="custom-modal" id="modal-profile">
+        <div class="modal-header">
+            <h3><i class="fa-solid fa-user-plus"></i> 创建角色</h3>
+            <button class="close-modal-btn">&times;</button>
+        </div>
+        <div class="modal-body">
+            <div class="avatar-select-grid">
+                <div class="avatar-option active">
+                    <img src="../generated-assets/首页/character-portrait.png" alt="头像1">
+                </div>
+                <div class="avatar-option placeholder-avatar">
+                    <i class="fa-solid fa-ghost"></i>
+                    <span>太乙散人</span>
+                </div>
+                <div class="avatar-option placeholder-avatar">
+                    <i class="fa-solid fa-hat-wizard"></i>
+                    <span>蓬莱剑客</span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="char-name-input">仙号名称：</label>
+                <input type="text" id="char-name-input" value="夜行舟" placeholder="请输入你的修仙名号">
+            </div>
+            <div class="form-group">
+                <label>出生命格：</label>
+                <select id="char-fate-select">
+                    <option value="1">剑骨天生 (武力+10, 智谋-2)</option>
+                    <option value="2">仙根宿慧 (智谋+10, 魅力+2)</option>
+                    <option value="3">天命眷顾 (气运+12, 意志-2)</option>
+                    <option value="4">百折不挠 (意志+12, 武力+2)</option>
+                </select>
+            </div>
+            <button class="primary-btn" id="create-confirm-btn">重塑仙躯</button>
+        </div>
+    </div>
+
+    <!-- Modal 2: Pouch (背包) -->
+    <div class="custom-modal" id="modal-pouch">
+        <div class="modal-header">
+            <h3><i class="fa-solid fa-bag-shopping"></i> 储物袋 (背包)</h3>
+            <button class="close-modal-btn">&times;</button>
+        </div>
+        <div class="modal-body">
+            <div class="inventory-grid">
+                <div class="inventory-item rare">
+                    <div class="item-icon"><i class="fa-solid fa-wand-sparkles"></i></div>
+                    <span class="item-name">青锋剑</span>
+                    <span class="item-count">x1</span>
+                </div>
+                <div class="inventory-item epic">
+                    <div class="item-icon"><i class="fa-solid fa-prescription-bottle-medical"></i></div>
+                    <span class="item-name">洗髓丹</span>
+                    <span class="item-count">x3</span>
+                </div>
+                <div class="inventory-item common">
+                    <div class="item-icon"><i class="fa-solid fa-scroll"></i></div>
+                    <span class="item-name">引气诀</span>
+                    <span class="item-count">x1</span>
+                </div>
+                <div class="inventory-item legendary">
+                    <div class="item-icon"><i class="fa-solid fa-gem"></i></div>
+                    <span class="item-name">九转金丹</span>
+                    <span class="item-count">x1</span>
+                </div>
+            </div>
+            <div class="item-detail-box">
+                <p class="select-prompt">点击物品查看详情</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 3: Book (图鉴) -->
+    <div class="custom-modal" id="modal-book">
+        <div class="modal-header">
+            <h3><i class="fa-solid fa-book-open"></i> 百科图鉴</h3>
+            <button class="close-modal-btn">&times;</button>
+        </div>
+        <div class="modal-body">
+            <div class="tabs-container">
+                <button class="tab-btn active" data-tab="characters">角色志</button>
+                <button class="tab-btn" data-tab="sects">宗门录</button>
+                <button class="tab-btn" data-tab="monsters">异兽志</button>
+            </div>
+            <div class="tab-pane active" id="tab-characters">
+                <ul class="codex-list">
+                    <li>
+                        <strong>夜行舟 (主角)</strong>
+                        <p>青云门外门弟子，机缘巧合下获得神秘残卷，踏上梦境轮回之旅。</p>
+                    </li>
+                    <li>
+                        <strong>陆雪琪 (执事)</strong>
+                        <p>外门管事，为人严厉冷峻，但对资质优秀的弟子颇有照拂。</p>
+                    </li>
+                </ul>
+            </div>
+            <div class="tab-pane" id="tab-sects">
+                <ul class="codex-list">
+                    <li>
+                        <strong>青云门</strong>
+                        <p>正道大派，以御剑术闻名天下，镇守青云山脉，底蕴深厚。</p>
+                    </li>
+                </ul>
+            </div>
+            <div class="tab-pane" id="tab-monsters">
+                <ul class="codex-list">
+                    <li>
+                        <strong>噬灵蛛</strong>
+                        <p>常年潜伏在后山灵矿矿洞中的妖兽，喜食修仙者散发的灵力。</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 4: Pavilion (社区广场) -->
+    <div class="custom-modal" id="modal-pavilion">
+        <div class="modal-header">
+            <h3><i class="fa-solid fa-comments"></i> 社区广场</h3>
+            <button class="close-modal-btn">&times;</button>
+        </div>
+        <div class="modal-body">
+            <div class="forum-posts">
+                <div class="forum-post">
+                    <div class="post-meta">
+                        <span class="author">太玄法师</span>
+                        <span class="time">刚刚</span>
+                    </div>
+                    <p class="post-content">兄弟们，第三章调查镇守使失踪案，你们遇到那个分叉路口，选进去还是退避？</p>
+                    <div class="post-actions">
+                        <span class="like-btn"><i class="fa-regular fa-thumbs-up"></i> 12</span>
+                        <span class="reply-btn"><i class="fa-regular fa-comment"></i> 3</span>
+                    </div>
+                </div>
+                <div class="forum-post">
+                    <div class="post-meta">
+                        <span class="author">剑无痕</span>
+                        <span class="time">2小时前</span>
+                    </div>
+                    <p class="post-content">九转金丹怎么合成啊，卡在练气巅峰了，救命！</p>
+                    <div class="post-actions">
+                        <span class="like-btn"><i class="fa-regular fa-thumbs-up"></i> 45</span>
+                        <span class="reply-btn"><i class="fa-regular fa-comment"></i> 18</span>
+                    </div>
+                </div>
+            </div>
+            <div class="post-input-box">
+                <input type="text" placeholder="修仙交流，发表神念...">
+                <button class="send-post-btn"><i class="fa-regular fa-paper-plane"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Chest Reward Modal -->
+    <div class="reward-modal" id="reward-modal">
+        <div class="chest-opening-animation">
+            <img src="../generated-assets/首页/ui-ornament-chest.png" alt="宝箱" class="glowing-chest">
+        </div>
+        <div class="reward-content">
+            <h3>恭喜获得章节奖励！</h3>
+            <div class="reward-item">
+                <img src="../generated-assets/首页/ui-ornament-crystal.png" alt="灵石" class="reward-icon">
+                <span class="reward-amount">+100 灵石</span>
+            </div>
+            <button class="claim-reward-btn" id="claim-reward-btn">收下灵石</button>
+        </div>
+    </div>
+
+    <!-- Script File -->
+    <script src="app.js"></script>
+</body>
+</html>
